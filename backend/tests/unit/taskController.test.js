@@ -24,7 +24,7 @@ describe('Task Controller - createTask', () => {
         // Vérification du code de statut
         expect(res.statusCode).toBe(201);
 
-        // Vérification de la réponse JSON
+        // Vérification de la réponse JSON.
         const responseBody = res._getJSONData();
         expect(responseBody.description).toBe('Test Task');
         expect(responseBody._id).toBeDefined(); // Vérifiez que l'ID a été généré
