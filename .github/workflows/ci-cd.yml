@@ -22,17 +22,20 @@ jobs:
       - name: Install dependencies for backend
         run: |
           cd backend
-          npm install
+          npm install --unsafe-perm=true
 
       - name: Install dependencies for frontend
         run: |
           cd frontend
-          npm install
+          npm install --unsafe-perm=true
+
+      - name: Fix permissions for Jest
+        run: chmod +x node_modules/.bin/jest
 
       - name: Run backend tests
         run: |
           cd backend
-          npm test
+          npx jest
 
       - name: Run frontend tests
         run: |
