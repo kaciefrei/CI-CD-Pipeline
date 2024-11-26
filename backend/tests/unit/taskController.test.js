@@ -12,7 +12,7 @@ describe('Task Controller - createTask', () => {
         });
         const res = httpMocks.createResponse();
 
-        Task.prototype.save = jest.fn().mockResolvedValue(true);
+        //Task.prototype.save = jest.fn().mockResolvedValue(true);
 
         await taskController.createTask(req, res);
 
