@@ -43,6 +43,6 @@ jobs:
 
       - name: Merge dev into main
         run: |
-          git checkout main || git checkout -b main # Crée la branche si elle n'existe pas
+          git checkout main || git checkout -b main
           git merge dev
           git push origin main
