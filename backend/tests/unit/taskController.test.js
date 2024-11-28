@@ -17,7 +17,7 @@ describe('Task Controller - createTask', () => {
         await taskController.createTask(req, res);
 
         expect(res.statusCode).toBe(201);
-        // expect the response to have JSON data
+        // expect the response to have JSON data.
         expect(res._getJSONData()).toEqual(true);
     });
 });
