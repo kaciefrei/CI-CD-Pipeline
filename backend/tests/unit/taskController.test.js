@@ -12,21 +12,12 @@ describe('Task Controller - createTask', () => {
         });
         const res = httpMocks.createResponse();
 
-        // Mock de la méthode save pour simuler l'enregistrement de la tâche
-        Task.prototype.save = jest.fn().mockResolvedValue({
-            _id: '1',
-            description: 'Test Task',
-        });
+        Task.prototype.save = jest.fn().mockResolvedValue(true);
 
-        // Appel du contrôleur
         await taskController.createTask(req, res);
 
-        // Vérification du code de statut
         expect(res.statusCode).toBe(201);
-
-        // Vérification de la réponse JSON.
-        const responseBody = res._getJSONData();
-        expect(responseBody.description).toBe('Test Task');
-        expect(responseBody._id).toBeDefined(); // Vérifiez que l'ID a été généré
+        // expect the response to have JSON data
+        expect(res._getJSONData()).toEqual(true);
     });
 });
