@@ -1,9 +1,10 @@
-name: Feature to Dev CI/CD
+name: CI/CD Pipeline
 
 on:
   push:
     branches:
       - dev
+      - master
 
 jobs:
   build-and-test:
@@ -38,9 +39,3 @@ jobs:
         run: |
           cd frontend
           npm test
-
-      - name: Merge dev into master
-        run: |
-          git checkout master
-          git merge dev
-          git push origin master
