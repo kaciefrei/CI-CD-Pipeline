@@ -12,8 +12,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -40,6 +38,11 @@ jobs:
         run: |
           cd frontend
           npm test
+
+      - name: Set up Git credentials
+        run: |
+          git config --global user.name "kaciefrei"
+          git config --global user.email "kaci.bouaouli@efrei.net"
 
       - name: Merge dev into main
         run: |
