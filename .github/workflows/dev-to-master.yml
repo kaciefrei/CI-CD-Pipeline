@@ -1,9 +1,9 @@
-name: Dev to Master Workflow
+name: Dev to main Workflow
 
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build-test-deploy:
